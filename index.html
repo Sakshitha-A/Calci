@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/program1(1).css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <input type="text" id="res" >
+        <div class="btn">
+           <input type="button" id="data" value = 'C' onclick = "Clear()">
+           <input type="button" id="data" value = '%' onclick = "Solve('%')">
+           <input type="button" id="data" value = '←' onclick ="Back('←')">
+           <input type="button" id="data" value = '/' onclick = "Solve('/')">
+           <br>
+           <input type="button" id="data" value = '7' onclick = "Solve('7')">
+           <input type="button" id="data" value = '8' onclick = "Solve('8')">
+           <input type="button" id="data" value = '9' onclick = "Solve('9')">
+           <input type="button" id="data" value = 'x' onclick = "Solve('*')">
+           <br>
+           <input type="button" id="data" value = '4' onclick = "Solve('4')">
+           <input type="button" id="data" value = '5' onclick = "Solve('5')">
+           <input type="button" id="data" value = '6' onclick = "Solve('6')">
+           <input type="button" id="data" value = '-' onclick = "Solve('-')">
+           <br>
+           <input type="button" id="data" value = '1' onclick = "Solve('1')">
+           <input type="button" id="data" value = '2' onclick = "Solve('2')">
+           <input type="button" id="data" value = '3' onclick = "Solve('3')">
+           <input type="button" id="data" value = '+' onclick = "Solve('+')">
+           <br>
+           <input type="button" id="data" value = '00'onclick = "Solve('00')">
+           <input type="button" id="data" value = '0' onclick = "Solve('0')">
+           <input type="button" id="data" value = '.' onclick = "Solve('.')">
+           <input type="button" id="data" value = '=' onclick = "Result()">
+        </div>
+     </div>
+     <style>
+        #res{
+            height: 50px;
+            width: 205px;
+            border-color: black;
+            border-width: 3px;
+            background-color: black;
+            color:#00d7f9;
+            font-size: 35px;
+            font-style: italic;
+        }
+        #data{
+            height: 50px;
+            width: 50px;
+            background-color: rgb(10, 10, 10);
+            color:#00d7f9;
+            font-size: 20px;
+            cursor: pointer;
+            font-style: italic;
+        }
+     </style>
+     <script >
+        function Solve(val) {
+            var v = document.getElementById('res');
+            v.value += val;
+        }
+        function Result() {
+            var num1 = document.getElementById('res').value;
+            var num2 = eval(num1);
+            document.getElementById('res').value = num2;
+        }
+        function Clear() {
+            var inp = document.getElementById('res');
+            inp.value = '';
+        }
+        function Back() {
+            var ev = document.getElementById('res');
+            ev.value = ev.value.slice(0,-1);
+ }
+     </script>
+</body>
+</html>
